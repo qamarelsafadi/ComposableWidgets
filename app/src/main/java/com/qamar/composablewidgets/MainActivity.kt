@@ -12,9 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.qamar.composablewidgets.ui.popupmenu.PopupMenu
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
-import com.qamar.composablewidgets.R
+import com.qamar.composablewidgets.ui.verticalhorizontallist.VerticalHorizontalList
 
 class MainActivity : ComponentActivity() {
 
@@ -27,8 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.gray)
                 ) {
-
-                    PopupMenu()
+                    VerticalHorizontalList()
                 }
             }
         }
@@ -39,6 +37,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        PopupMenu()
+        VerticalHorizontalList()
     }
 }
