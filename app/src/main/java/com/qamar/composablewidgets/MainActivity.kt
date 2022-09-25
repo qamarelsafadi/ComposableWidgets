@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.qamar.composablewidgets.ui.gradient.Gradient
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
 import com.qamar.composablewidgets.ui.verticalhorizontallist.VerticalHorizontalList
 
@@ -37,6 +38,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        VerticalHorizontalList()
+        Gradient()
     }
 }
