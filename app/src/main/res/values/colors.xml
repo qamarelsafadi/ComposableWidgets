@@ -11,4 +11,14 @@
     <color name="unselected">#80FFFFFF</color>
     <color name="selected">#000000</color>
     <color name="shadow">#4583514E</color>
+    <color name="text_alpha">#C2FFFFFF</color>
+    <color name="red_dark">#9C001E</color>
+    <color name="brown">#836969</color>
+    <color name="brown_light">#C6B9B3</color>
+    <color name="gray_light">#F6F0FF</color>
+    <color name="white_alpha">#42FFFFFF</color>
+    <color name="gradinet">#9CACB8</color>
+    <color name="gradinet3">#BACAD6</color>
+    <color name="gradinet2">#736565</color>
+    <color name="gradinet4">#AC9696</color>
 </resources>
