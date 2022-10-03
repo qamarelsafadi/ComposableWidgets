@@ -13,11 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.qamar.composablewidgets.ui.carouselview.CarouselView
-import com.qamar.composablewidgets.ui.gradient.Gradient
-import com.qamar.composablewidgets.ui.searchbar.SearchBar
+import com.qamar.composablewidgets.ui.imagepicker.ImagePicker
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
-import com.qamar.composablewidgets.ui.verticalhorizontallist.VerticalHorizontalList
 
 class MainActivity : ComponentActivity() {
 
@@ -31,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     color = colorResource(id = R.color.gray)
                 ) {
                   Column {
-                      SearchBar()
+                      ImagePicker()
                   }
                 }
             }
@@ -43,6 +40,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        SearchBar()
+        ImagePicker()
     }
 }

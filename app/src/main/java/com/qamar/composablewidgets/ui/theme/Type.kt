@@ -15,9 +15,9 @@ val Typography = Typography(
         fontFamily = fonts,
         fontWeight = FontWeight.SemiBold,
         fontSize = 14.sp,
-        lineHeight = 1.sp,
+        lineHeight = 0.sp,
         lineHeightStyle = LineHeightStyle(
-            alignment = LineHeightStyle.Alignment.Bottom,
+            alignment = LineHeightStyle.Alignment.Center,
             trim = LineHeightStyle.Trim.None
         )
     ),
