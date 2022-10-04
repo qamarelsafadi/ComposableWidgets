@@ -22,36 +22,20 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
+import com.qamar.composablewidgets.ui.topappbar.TopBar
 
 
 @Composable
-fun SearchBar() {
+fun SearchBar(titleTopAppBar:String = "") {
     var searchableShown by remember { mutableStateOf(false) }
     var text by remember { mutableStateOf("") }
     Box(
         Modifier.wrapContentHeight()
     ) {
-
-        TopAppBar(
-            title = {
-                Box() {
-                    Text(
-                        text = "Home",
-                    )
-                }
-            },
-            actions = {
-                IconButton(
-                    onClick = {
-                        searchableShown = true
-                    }
-                ) {
-                    Icon(
-                        imageVector = Icons.Filled.Search,
-                        contentDescription = "Search Icon",
-                        tint = Color.White
-                    )
-                }
+        TopBar(
+            title = titleTopAppBar,
+            onClickIconSearch = {
+                searchableShown = true
             }
         )
         AnimatedVisibility(visible = searchableShown,
@@ -144,6 +128,6 @@ fun SearchBar() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        SearchBar()
+        SearchBar(titleTopAppBar = "Home")
     }
 }
