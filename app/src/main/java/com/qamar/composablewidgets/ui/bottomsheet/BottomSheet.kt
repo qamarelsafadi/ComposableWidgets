@@ -2,6 +2,8 @@ package com.qamar.composablewidgets.ui.bottomsheet
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CornerSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -31,7 +33,8 @@ fun BottomSheet(
         sheetState = sheetState,
         sheetBackgroundColor = color ?: MaterialTheme.colors.surface,
         sheetContent = { content() },
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
+        sheetShape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp)
     ) {
         Column(
             Modifier.fillMaxSize(),
