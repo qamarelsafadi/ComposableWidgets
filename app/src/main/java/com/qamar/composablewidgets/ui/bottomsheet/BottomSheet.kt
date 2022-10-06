@@ -33,15 +33,22 @@ fun BottomSheet(
         sheetContent = { content() },
         modifier = Modifier.fillMaxSize()
     ) {
-        Button(
-            onClick = {
-                coroutineScope.launch {
-                    if (sheetState.isVisible) sheetState.hide()
-                    else sheetState.show()
-                }
-            }
+        Column(
+            Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            Text(text = "Click to show bottom sheet")
+            Button(
+                modifier = Modifier.align(Alignment.CenterHorizontally),
+                onClick = {
+                    coroutineScope.launch {
+                        if (sheetState.isVisible) sheetState.hide()
+                        else sheetState.show()
+                    }
+                },
+            ) {
+                Text(text = "Click to show bottom sheet")
+            }
         }
     }
 }
