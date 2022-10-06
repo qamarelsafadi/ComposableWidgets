@@ -13,6 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.qamar.composablewidgets.ui.bottomsheet.BottomSheet
+import com.qamar.composablewidgets.ui.bottomsheet.BottomSheetContent
 import com.qamar.composablewidgets.ui.imagepicker.ImagePicker
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
 
@@ -27,9 +29,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.gray)
                 ) {
-                  Column {
-                      ImagePicker()
-                  }
+                    Column {
+                        ImagePicker()
+                    }
                 }
             }
         }
@@ -40,6 +42,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        ImagePicker()
+        BottomSheet(
+            content = { BottomSheetContent() })
     }
 }
