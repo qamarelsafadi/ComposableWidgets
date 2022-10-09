@@ -25,12 +25,12 @@ fun CodeArrangement() {
                 .aspectRatio(1f)
         ) {
             Text(
-                "Lets see what",
-                color = Color.Black,
+                "Lets see what happens",
+                color = Color.White,
                 modifier = Modifier
                     .wrapContentHeight()
-                    .background(Color.Blue)
                     .padding(16.dp)
+                    .background(Color.Blue)
 
             )
         }
@@ -38,7 +38,7 @@ fun CodeArrangement() {
 }
 
 
-@Preview(showBackground = true)
+@Preview()
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
