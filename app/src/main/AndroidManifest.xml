@@ -10,21 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeWithHilt">
         <activity
-            android:name="com.qamar.composablewidgets.MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.ComposeWithHilt">
+            android:name=".ui.composeinxml.ComposeXmlActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
+        <activity
+            android:name="com.qamar.composablewidgets.MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ComposeWithHilt">
+
+        </activity>
+
         <provider
             android:name=".utils.ComposeFileProvider"
             android:authorities="com.qamar.composablewidgets.fileprovider"
-            android:grantUriPermissions="true"
-            android:exported="false">
+            android:exported="false"
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
