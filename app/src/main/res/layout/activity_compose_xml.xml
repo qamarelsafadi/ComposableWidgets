@@ -8,7 +8,6 @@
 
 
     <com.qamar.composablewidgets.ui.composeinxml.ComposeProgressButtonView
-        android:id="@+id/composeCarouselView"
         android:layout_width="match_parent"
         android:layout_gravity="center_vertical"
         android:layout_height="wrap_content" />

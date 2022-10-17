@@ -12,6 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.qamar.composablewidgets.ui.dragexample.DragExample
 import com.qamar.composablewidgets.ui.modifiers.TryModifiers
 import com.qamar.composablewidgets.ui.sideeffect.TryLaunchedEffect
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.gray)
                 ) {
-                    TryModifiers()
+                    DragExample()
                 }
             }
         }
@@ -36,6 +37,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        TryModifiers()
+        DragExample()
     }
 }

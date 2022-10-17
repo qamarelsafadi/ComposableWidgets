@@ -11,22 +11,22 @@
         android:theme="@style/Theme.ComposeWithHilt">
         <activity
             android:name=".ui.composeinxml.ComposeXmlActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name="com.qamar.composablewidgets.MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ComposeWithHilt">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <provider
