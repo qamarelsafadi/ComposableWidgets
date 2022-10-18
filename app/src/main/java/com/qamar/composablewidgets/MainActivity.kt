@@ -16,6 +16,7 @@ import com.qamar.composablewidgets.ui.dragexample.DragExample
 import com.qamar.composablewidgets.ui.lottieexample.LottieExample
 import com.qamar.composablewidgets.ui.modifiers.TryModifiers
 import com.qamar.composablewidgets.ui.sideeffect.TryLaunchedEffect
+import com.qamar.composablewidgets.ui.state.StateExample
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.gray)
                 ) {
-                    LottieExample()
+                    StateExample()
                 }
             }
         }
@@ -38,6 +39,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        LottieExample()
+        StateExample()
     }
 }
