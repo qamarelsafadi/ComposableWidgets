@@ -20,6 +20,7 @@ import com.qamar.composablewidgets.ui.modifiers.TryModifiers
 import com.qamar.composablewidgets.ui.sideeffect.TryLaunchedEffect
 import com.qamar.composablewidgets.ui.state.StateExample
 import com.qamar.composablewidgets.ui.swipableitem.SwipeList
+import com.qamar.composablewidgets.ui.swipetorefresh.SwipeToRefreshList
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,9 +30,9 @@ class MainActivity : ComponentActivity() {
             ComposableWidgetsTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = colorResource(id = R.color.gray)
+                    color = colorResource(id = R.color.white)
                 ) {
-                    SwipeList()
+                    SwipeToRefreshList()
                 }
             }
         }
@@ -42,6 +43,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        SwipeList()
+        SwipeToRefreshList()
     }
 }
