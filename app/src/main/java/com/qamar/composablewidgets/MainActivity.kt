@@ -18,6 +18,7 @@ import com.qamar.composablewidgets.ui.lottieexample.LottieExample
 import com.qamar.composablewidgets.ui.menu.MenuExample
 import com.qamar.composablewidgets.ui.modifiers.TryModifiers
 import com.qamar.composablewidgets.ui.sideeffect.TryLaunchedEffect
+import com.qamar.composablewidgets.ui.staggered.StaggeredList
 import com.qamar.composablewidgets.ui.state.StateExample
 import com.qamar.composablewidgets.ui.swipableitem.SwipeList
 import com.qamar.composablewidgets.ui.swipetorefresh.SwipeToRefreshList
@@ -32,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.white)
                 ) {
-                    SwipeToRefreshList()
+                    StaggeredList()
                 }
             }
         }
@@ -43,6 +44,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        SwipeToRefreshList()
+        StaggeredList()
     }
 }

@@ -18,8 +18,9 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun SwipeToRefreshList(){
+
     val refreshScope = rememberCoroutineScope()
-    var refreshing by remember { mutableStateOf(false) }
+    var refreshing by remember { mutableStateOf(false) } // a flag  to start or stop refreshing
     var itemCount by remember { mutableStateOf(15) }
 
     fun refresh() = refreshScope.launch {
@@ -29,7 +30,7 @@ fun SwipeToRefreshList(){
         refreshing = false
     }
 
-    val state = rememberPullRefreshState(refreshing, ::refresh)
+    val state = rememberPullRefreshState(refreshing, ::refresh) // take the flag , and a function
 
     Box(Modifier.pullRefresh(state)) {
         LazyColumn(Modifier.fillMaxSize()) {
@@ -40,6 +41,6 @@ fun SwipeToRefreshList(){
             }
         }
 
-        PullRefreshIndicator(refreshing, state, Modifier.align(Alignment.TopCenter))
+        PullRefreshIndicator(refreshing, state, Modifier.align(Alignment.TopCenter)) // the refresh indicator
     }
 }
