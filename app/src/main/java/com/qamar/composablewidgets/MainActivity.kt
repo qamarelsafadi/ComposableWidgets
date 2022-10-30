@@ -17,6 +17,7 @@ import com.qamar.composablewidgets.ui.dragexample.DragExample
 import com.qamar.composablewidgets.ui.lottieexample.LottieExample
 import com.qamar.composablewidgets.ui.menu.MenuExample
 import com.qamar.composablewidgets.ui.modifiers.TryModifiers
+import com.qamar.composablewidgets.ui.sendemail.SendEmailExample
 import com.qamar.composablewidgets.ui.sideeffect.TryLaunchedEffect
 import com.qamar.composablewidgets.ui.staggered.StaggeredList
 import com.qamar.composablewidgets.ui.state.StateExample
@@ -33,7 +34,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.white)
                 ) {
-                    StaggeredList()
+                    SendEmailExample()
                 }
             }
         }
@@ -44,6 +45,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        StaggeredList()
+        SendEmailExample()
     }
 }
