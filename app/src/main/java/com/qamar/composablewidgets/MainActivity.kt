@@ -14,7 +14,6 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.qamar.composablewidgets.ui.ratingbar.RatingBar
-import com.qamar.composablewidgets.ui.sendemail.SendEmailExample
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.white)
                 ) {
-                    SendEmailExample()
+                    RatingBar(rating = 3.7f, spaceBetween = 3.dp)
                 }
             }
         }
@@ -37,6 +36,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        RatingBar(rating = 3.7f, gap = 3.dp)
+        RatingBar(rating = 3f, spaceBetween = 3.dp)
     }
 }

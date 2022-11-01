@@ -20,25 +20,24 @@ import androidx.compose.ui.unit.dp
 import com.qamar.composablewidgets.R
 
 @Composable
- fun RatingBar(
-    modifier: Modifier = Modifier,
+fun RatingBar(
     rating: Float,
-    gap: Dp = 0.dp,
+    spaceBetween: Dp = 0.dp
 ) {
 
-    val image = ImageBitmap.imageResource(id = R.drawable.ic_baseline_star_border_24)
-    val imageFull = ImageBitmap.imageResource(id = R.drawable.ic_baseline_star_24)
+    val image = ImageBitmap.imageResource(id = R.drawable.star)
+    val imageFull = ImageBitmap.imageResource(id = R.drawable.startfill)
 
     val totalCount = 5
 
     val height = LocalDensity.current.run { image.height.toDp() }
     val width = LocalDensity.current.run { image.width.toDp() }
-    val space = LocalDensity.current.run { gap.toPx() }
-    val totalWidth = width * totalCount + gap * (totalCount - 1)
+    val space = LocalDensity.current.run { spaceBetween.toPx() }
+    val totalWidth = width * totalCount + spaceBetween * (totalCount - 1)
 
 
     Box(
-        modifier
+        Modifier
             .width(totalWidth)
             .height(height)
             .drawBehind {
@@ -71,7 +70,7 @@ private fun DrawScope.drawRating(
         )
     }
 
-    drawWithLayer {
+    drawLayer {
         for (i in 0 until totalCount) {
             val start = imageWidth * i + space * i
             // Destination
@@ -85,7 +84,6 @@ private fun DrawScope.drawRating(
         val start = rating * imageWidth + ratingInt * space
         val size = end - start
 
-        // Source
         drawRect(
             Color.Transparent,
             topLeft = Offset(start, 0f),
@@ -95,7 +93,7 @@ private fun DrawScope.drawRating(
     }
 }
 
-private fun DrawScope.drawWithLayer(block: DrawScope.() -> Unit) {
+private fun DrawScope.drawLayer(block: DrawScope.() -> Unit) {
     with(drawContext.canvas.nativeCanvas) {
         val checkPoint = saveLayer(null, null)
         block()
