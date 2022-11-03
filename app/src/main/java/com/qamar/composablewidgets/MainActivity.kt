@@ -29,7 +29,10 @@ class MainActivity : ComponentActivity() {
                     .background(color = Color.White)) {
                     RatingBar(rating = 3.7f, spaceBetween = 3.dp)
 
-                    RatingView(Modifier.padding(top = 24.dp))
+                    RatingView(
+                        Modifier.padding(top = 24.dp),
+                        ratingPercentage = 0.72f
+                    )
                 }
             }
         }
