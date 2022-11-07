@@ -17,23 +17,24 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.qamar.composablewidgets.R
 
 @Composable
 fun RatingBar(
     rating: Float,
-    spaceBetween: Dp = 0.dp
+    gab: Dp = 0.dp,
+    starDrawable: Int,
+    starFillDrawable: Int
 ) {
 
-    val image = ImageBitmap.imageResource(id = R.drawable.star)
-    val imageFull = ImageBitmap.imageResource(id = R.drawable.startfill)
+    val image = ImageBitmap.imageResource(id = starDrawable)
+    val imageFull = ImageBitmap.imageResource(id = starFillDrawable)
 
     val totalCount = 5
 
     val height = LocalDensity.current.run { image.height.toDp() }
     val width = LocalDensity.current.run { image.width.toDp() }
-    val space = LocalDensity.current.run { spaceBetween.toPx() }
-    val totalWidth = width * totalCount + spaceBetween * (totalCount - 1)
+    val space = LocalDensity.current.run { gab.toPx() }
+    val totalWidth = width * totalCount + gab * (totalCount - 1)
 
 
     Box(

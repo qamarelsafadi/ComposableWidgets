@@ -4,7 +4,9 @@ package com.qamar.composablewidgets
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
@@ -13,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.qamar.composablewidgets.ui.map.ComposeMap
 import com.qamar.composablewidgets.ui.ratingbar.RatingBar
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
 
@@ -25,7 +28,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.white)
                 ) {
-                    RatingBar(rating = 3.7f, spaceBetween = 3.dp)
+
+                    ComposeMap()
+
                 }
             }
         }
@@ -36,6 +41,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        RatingBar(rating = 3f, spaceBetween = 3.dp)
+        RatingBar(
+            rating = 3f, gab = 3.dp,
+            starDrawable = R.drawable.star,
+            starFillDrawable = R.drawable.startfill
+        )
     }
 }
