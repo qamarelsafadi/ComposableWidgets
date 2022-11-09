@@ -27,7 +27,12 @@ class MainActivity : ComponentActivity() {
                 Column(modifier = Modifier
                     .fillMaxSize()
                     .background(color = Color.White)) {
-                    RatingBar(rating = 3.7f, spaceBetween = 3.dp)
+                    RatingBar(
+                        rating = 3.7f,
+                        gab = 3.dp,
+                        starDrawable = R.drawable.star,
+                        starFillDrawable = R.drawable.startfill
+                    )
 
                     RatingView(
                         Modifier.padding(top = 24.dp),
@@ -43,6 +48,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        RatingBar(rating = 3f, spaceBetween = 3.dp)
+        RatingBar(
+            rating = 3f,
+            gab = 3.dp,
+            starDrawable = R.drawable.star,
+            starFillDrawable = R.drawable.startfill
+        )
     }
 }
