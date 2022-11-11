@@ -3,7 +3,6 @@ package com.qamar.composablewidgets.ui.calender
 import android.view.ContextThemeWrapper
 import android.widget.CalendarView
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
@@ -17,7 +16,7 @@ import java.util.*
 
 @Preview
 @Composable
-fun Calender(){
+fun Calendar(){
     val dateFormat = SimpleDateFormat("dd:MM:yyyy", Locale.ENGLISH)
     val cal = Calendar.getInstance()
     val date = remember{ mutableStateOf(dateFormat.format(cal.time)) }
@@ -26,6 +25,14 @@ fun Calender(){
         horizontalAlignment = Alignment.CenterHorizontally) {
         Text(text = date.value)
         AndroidView(
-            { CalendarView(it) })
+            { CalendarView(ContextThemeWrapper(it, R.style.CalenderViewCustom)) },
+            update = { views ->
+                views.weekDayTextAppearance = R.style.CalenderViewWeekCustomText
+                views.firstDayOfWeek = Calendar.SATURDAY
+                views.setOnDateChangeListener { _, year, month, dayOfMonth ->
+                    cal.set(year, month, dayOfMonth)
+                    date.value = dateFormat.format(cal.time).toString()
+                }
+            })
     }
 }
