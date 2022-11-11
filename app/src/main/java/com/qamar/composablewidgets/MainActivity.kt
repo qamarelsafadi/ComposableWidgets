@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.qamar.composablewidgets.ui.calender.Calender
 import com.qamar.composablewidgets.ui.ratingbar.RatingBar
 import com.qamar.composablewidgets.ui.ratingbar.RatingView
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
@@ -24,21 +25,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposableWidgetsTheme {
-                Column(modifier = Modifier
-                    .fillMaxSize()
-                    .background(color = Color.White)) {
-                    RatingBar(
-                        rating = 3.7f,
-                        gab = 3.dp,
-                        starDrawable = R.drawable.star,
-                        starFillDrawable = R.drawable.startfill
-                    )
-
-                    RatingView(
-                        Modifier.padding(top = 24.dp),
-                        ratingPercentage = 0.72f
-                    )
-                }
+                Calender()
             }
         }
     }
