@@ -21,6 +21,7 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.calculateCurrentOffsetForPage
 import com.qamar.composablewidgets.R
+import com.qamar.elasticview.ElasticView
 import kotlin.math.absoluteValue
 
 @OptIn(ExperimentalPagerApi::class)
@@ -43,46 +44,49 @@ fun CarouselView() {
         contentPadding = PaddingValues(end = 65.dp),
         modifier = Modifier
             .fillMaxSize()
+            .padding(horizontal = 16.dp)
 
     ) { page ->
-        Card(
-            Modifier
-                .graphicsLayer {
-                    // Calculate the absolute offset for the current page from the
-                    // scroll position. We use the absolute value which allows us to mirror
-                    // any effects for both directions
-                    val pageOffset = calculateCurrentOffsetForPage(page).absoluteValue
-                    // We animate the scaleX + scaleY, between 85% and 100%
-                    lerp(
-                        start = 0.85f,
-                        stop = 1f,
-                        fraction = 1f - pageOffset.coerceIn(0f, 1f)
-                    ).also { scale ->
-                        scaleX = scale
-                        scaleY = scale
-                    }
+        ElasticView {
+            Card(
+                Modifier
+                    .graphicsLayer {
+                        // Calculate the absolute offset for the current page from the
+                        // scroll position. We use the absolute value which allows us to mirror
+                        // any effects for both directions
+                        val pageOffset = calculateCurrentOffsetForPage(page).absoluteValue
+                        // We animate the scaleX + scaleY, between 85% and 100%
+                        lerp(
+                            start = 0.85f,
+                            stop = 1f,
+                            fraction = 1f - pageOffset.coerceIn(0f, 1f)
+                        ).also { scale ->
+                            scaleX = scale
+                            scaleY = scale
+                        }
 
-                    // We animate the alpha, between 50% and 100%
-                    alpha = lerp(
-                        start = 0.5f,
-                        stop = 1f,
-                        fraction = 1f - pageOffset.coerceIn(0f, 1f)
-                    )
-                }
-                // you can control your card height for here if you decrease the ratio it will
-                //get more height else will be shorter
-                .aspectRatio(0.72f),
-            backgroundColor = Color.Transparent,
-            shape = RoundedCornerShape(15.dp),
-            elevation = 10.dp
-        ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight()
-                    .background(if (page % 2 == 0) gradient else gradient2)
+                        // We animate the alpha, between 50% and 100%
+                        alpha = lerp(
+                            start = 0.5f,
+                            stop = 1f,
+                            fraction = 1f - pageOffset.coerceIn(0f, 1f)
+                        )
+                    }
+                    // you can control your card height for here if you decrease the ratio it will
+                    //get more height else will be shorter
+                    .aspectRatio(0.72f),
+                backgroundColor = Color.Transparent,
+                shape = RoundedCornerShape(15.dp),
+                elevation = 10.dp
             ) {
-                ProductItem(page = page)
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight()
+                        .background(if (page % 2 == 0) gradient else gradient2)
+                ) {
+                    ProductItem(page = page)
+                }
             }
         }
     }

@@ -10,6 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.qamar.composablewidgets.ui.calender.Calendar
+import com.qamar.composablewidgets.ui.carouselview.CarouselView
+import com.qamar.composablewidgets.ui.progressbutton.ProgressButton
 import com.qamar.composablewidgets.ui.ratingbar.RatingBar
 import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
 
@@ -18,7 +20,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposableWidgetsTheme {
-                Calendar()
+                ProgressButton()
             }
         }
     }
@@ -28,11 +30,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        RatingBar(
-            rating = 3f,
-            gab = 3.dp,
-            starDrawable = R.drawable.star,
-            starFillDrawable = R.drawable.startfill
-        )
+        ProgressButton()
     }
 }

@@ -73,7 +73,7 @@ dependencies {
     implementation "androidx.compose.ui:ui-util"
     implementation "com.google.accompanist:accompanist-permissions:0.16.1"
     implementation("io.coil-kt:coil-compose:2.2.2")
-
+    implementation 'com.github.qamarelsafadi:ElasticView:v0.1'
     implementation 'com.google.maps.android:maps-compose:2.7.2'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
 

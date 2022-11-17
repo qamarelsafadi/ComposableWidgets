@@ -9,6 +9,8 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import com.qamar.composablewidgets.R
 import com.qamar.composablewidgets.ui.progressbutton.components.ProgressButtonComponents
+import com.qamar.elasticview.ElasticView
+
 
 @Composable
 fun ProgressButton() {
@@ -19,7 +21,7 @@ fun ProgressButton() {
         var loading by remember {
             mutableStateOf(false)
         }
-        Box() {
+        ElasticView {
             ProgressButtonComponents(
                 onClick = { loading = !loading },
                 modifier = Modifier
@@ -30,10 +32,7 @@ fun ProgressButton() {
                 color = R.color.purple_200,
                 progressColor = R.color.white
             ) {
-                Text(
-                    color = colorResource(id = R.color.white),
-                    text = "Refresh"
-                )
+
             }
         }
     }
