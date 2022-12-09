@@ -11,7 +11,7 @@ import androidx.navigation.compose.rememberNavController
 @Composable
 fun NavigationHost(
     modifier: Modifier = Modifier,
-    navController: NavHostController = rememberNavController(),
+    navController: NavHostController,
     startDestination: String = Destinations.SCREEN_1
 ) {
     NavHost(
