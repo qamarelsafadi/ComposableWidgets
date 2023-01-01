@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.relay' version '0.3.02'
     id 'org.jetbrains.kotlin.android'
 }
 

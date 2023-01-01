@@ -1,0 +1,103 @@
+{
+  "name": "figma_card",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "VEVJTgERdUpGXuVPhus2uF",
+    "node": "4:4",
+    "version": "2813718589",
+    "component-id": "7871309a39169f0ffc6e2c5e66167c05571fd6f7"
+  },
+  "default": "FigmaCard",
+  "documentation": "Figma Card in Compose",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "image",
+        "id": "Image"
+      },
+      {
+        "type": "text",
+        "id": "Title"
+      }
+    ],
+    "modes": {
+      "FigmaCard": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": "16.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Image",
+              "Title"
+            ],
+            "item-spacing": "16.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "115.3846153846154",
+              "saturation": "0.051587301587301626",
+              "value": "0.9882352941176471"
+            }
+          },
+          {
+            "id": "Image",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "216.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "124.0"
+              }
+            },
+            "image-content": "image.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Title",
+            "color": {
+              "alpha": "1.0",
+              "hue": "228.0",
+              "saturation": "0.15625",
+              "value": "0.12549019607843137"
+            },
+            "text-content": "Qamar A. Safadi",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": "24.0",
+            "line-height": "1.219000021616618",
+            "typeface": "Montserrat"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "FigmaCard",
+      "size": {
+        "width": 248.0,
+        "height": 201.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
