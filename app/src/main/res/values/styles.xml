@@ -2,14 +2,14 @@
 <resources>
 
     <style name="CalenderViewCustom" parent="Theme.AppCompat">
-        <item name="colorAccent">@android:color/holo_purple</item>
-        <item name="colorPrimary">@color/black</item>
-        <item name="android:textColorPrimary">@color/black</item>
-        <item name="android:dayOfWeekBackground">@color/black</item>
-        <item name="android:calendarViewShown">true</item>
-    </style>
+    <item name="colorAccent">#00B8A6</item>
+    <item name="colorPrimary">@color/white</item>
+    <item name="android:textColorPrimary">@color/white</item>
+    <item name="android:dayOfWeekBackground">@color/white</item>
+    <item name="android:calendarViewShown">true</item>
+</style>
     <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">#879EAA</item>
     </style>
 
 </resources>

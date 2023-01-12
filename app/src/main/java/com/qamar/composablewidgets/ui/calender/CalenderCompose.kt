@@ -20,6 +20,7 @@ fun Calendar(){
     val dateFormat = SimpleDateFormat("dd:MM:yyyy", Locale.ENGLISH)
     val cal = Calendar.getInstance()
     val date = remember{ mutableStateOf(dateFormat.format(cal.time)) }
+
     Column(
         modifier =  Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally) {
