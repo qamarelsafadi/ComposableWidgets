@@ -20,7 +20,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.qamar.composablewidgets.R
-import com.qamar.composablewidgets.figmacard.Image
 
 @Preview
 @Composable
