@@ -43,7 +43,6 @@ fun StepperView(
             thickness = 4.dp,
             color = Color.Gray
         )
-
         LazyRow(
             modifier,
             horizontalArrangement = Arrangement.SpaceEvenly
@@ -62,19 +61,16 @@ fun StepperView(
 
 @Composable
 fun Step(step: String, isCurrent: Boolean, isCompleted: Boolean) {
-
     val stepIcon: Int = if (isCurrent) R.drawable.checked
     else {
         if (isCompleted) R.drawable.checked
         else R.drawable.unchecked
     }
-
     Spacer(modifier = Modifier.width(5.dp))
     Column {
         androidx.compose.foundation.Image(
             painter = painterResource(id = stepIcon), contentDescription = ""
         )
-
         Text(
             text = step,
             color = Color.White
