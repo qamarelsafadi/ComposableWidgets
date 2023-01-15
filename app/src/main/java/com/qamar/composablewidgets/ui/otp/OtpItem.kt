@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -18,6 +18,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.qamar.composablewidgets.ui.theme.text14WhiteCenter
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 @Preview
@@ -35,12 +37,26 @@ fun OtpItem(
     itemHeight: Dp,
     itemBackground: Color
 ) {
+
+    val scope = rememberCoroutineScope()
+    val (cursorSymbol, setCursorSymbol) = remember { mutableStateOf("") }
+
     val isFocused = text.length == index
     val char = when {
         index == text.length -> ""
         index > text.length -> ""
         else -> text[index].toString()
     }
+
+    LaunchedEffect(key1 = cursorSymbol, isFocused) {
+        if (isFocused) {
+            scope.launch {
+                delay(350)
+                setCursorSymbol(if (cursorSymbol.isEmpty()) "|" else "")
+            }
+        }
+    }
+
     Box(
         modifier = Modifier
             .width(itemWidth)
@@ -60,7 +76,7 @@ fun OtpItem(
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = char,
+            text = if (isFocused) cursorSymbol else char,
             textAlign = TextAlign.Center,
             style = textStyle
         )
