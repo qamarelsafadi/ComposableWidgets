@@ -2,6 +2,7 @@
 
 package com.qamar.composablewidgets
 
+import android.graphics.drawable.Icon
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -10,6 +11,9 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Icon
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
@@ -22,6 +26,9 @@ import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import com.qamar.composablewidgets.ui.MyButton
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,23 +38,23 @@ class MainActivity : ComponentActivity() {
                 var otpValue by remember {
                     mutableStateOf("")
                 }
-                Row(
-                    Modifier.fillMaxSize(),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    OtpView(
-                        otpText = otpValue,
-                        withBorders = true,
-                        onOtpTextChange = { value, isDone ->
-                            otpValue = value
-                            if (isDone) {
-                                // Call your request.
-                            }
-                        })
-                }
+                MyButton(
+                    text = "My Custom Button",
+                    backgroundColor = Color.Blue,
+                    roundedRadius = 8.dp,
+                    leadingIcon = {
+                        Icon(Icons.Filled.Star, contentDescription = null)
+                    },
+                    trailingIcon = {
+                        Icon(Icons.Filled.Star, contentDescription = null)
+                    },
+                    onClick = {
+                        // Perform action when button is clicked
+                    }
+                )
             }
         }
+        List
     }
 }
 
@@ -55,8 +62,15 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     ComposableWidgetsTheme {
-        OtpView(
-            onOtpTextChange = { value, isEmpty ->
+        MyButton(
+            text = "My Custom Button",
+            backgroundColor = Color.Blue,
+            roundedRadius = 8.dp,
+            leadingIcon = {
+                Icon(Icons.Filled.Star, contentDescription = null)
+            },
+            onClick = {
+                // Perform action when button is clicked
             }
         )
     }
