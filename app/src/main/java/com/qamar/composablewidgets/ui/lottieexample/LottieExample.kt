@@ -17,7 +17,7 @@ fun LottieExample() {
 }
 
 @Composable
-fun LottieAnimationSizeView(modifier: Modifier = Modifier, raw: Int) {
+fun LottieAnimationView(modifier: Modifier = Modifier, raw: Int) {
     val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(raw))
     LottieAnimation(
         composition,

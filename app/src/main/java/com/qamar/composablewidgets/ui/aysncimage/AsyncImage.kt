@@ -17,7 +17,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import coil.compose.SubcomposeAsyncImage
 import com.qamar.composablewidgets.R
-import com.qamar.composablewidgets.ui.lottieexample.LottieAnimationSizeView
+import com.qamar.composablewidgets.ui.lottieexample.LottieAnimationView
 
 
 @Composable
@@ -40,7 +40,7 @@ fun AsyncImage(
                     .size(64.dp),
                 contentAlignment = Alignment.Center
             ) {
-                LottieAnimationSizeView(
+                LottieAnimationView(
                     raw = R.raw.imageloading,
                     modifier = Modifier
                         .width(25.dp)
