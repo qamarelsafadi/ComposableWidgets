@@ -67,3 +67,9 @@ val text14WhiteCenter = TextStyle(
         trim = LineHeightStyle.Trim.None
     ),
 )
+val buttonText = TextStyle(
+    fontFamily = fonts,
+    fontWeight = FontWeight.Medium,
+    fontSize = 13.sp,
+    color = Color.White
+)

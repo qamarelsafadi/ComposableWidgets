@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 
@@ -54,10 +55,13 @@ fun FlipButton(
                 }
                 cameraDistance = 12f * density
             },
+        contentAlignment = Alignment.Center
     ) {
         if (rotation.value <= 90f) {
             Box(
-                Modifier.fillMaxSize()
+                Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+
             ) {
                 front()
             }
@@ -72,6 +76,7 @@ fun FlipButton(
                             rotationY = 180f
                         }
                     },
+                contentAlignment = Alignment.Center
             ) {
                 back()
             }

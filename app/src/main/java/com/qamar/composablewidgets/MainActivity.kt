@@ -2,54 +2,75 @@
 
 package com.qamar.composablewidgets
 
-import android.graphics.drawable.Icon
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredHeight
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.compose.rememberNavController
-import com.qamar.composablewidgets.figmacard.FigmaCard
-import com.qamar.composablewidgets.ui.otp.OtpView
-import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.qamar.composablewidgets.ui.MyButton
-import com.qamar.composablewidgets.ui.aysncimage.AsyncImage
-import com.qamar.composablewidgets.ui.theme.Bg
+import com.qamar.composablewidgets.ui.flippingbutton.FlipButton
+import com.qamar.composablewidgets.ui.theme.ComposableWidgetsTheme
+import androidx.compose.runtime.*
+import com.qamar.composablewidgets.ui.button.ElasticButton
+import com.qamar.composablewidgets.ui.flippingbutton.FlipFace
+import com.qamar.composablewidgets.ui.theme.Blue
+import com.qamar.composablewidgets.ui.theme.BorderBlue
 
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterialApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            var state by remember {
+                mutableStateOf(FlipFace.Front)
+            }
             ComposableWidgetsTheme {
                 Box(Modifier.fillMaxSize()
                     .background(Color.LightGray),
                 contentAlignment = Alignment.Center) {
-                    AsyncImage(
-                        imageUrl = "https://developer.android.com/static/codelabs/jetpack-compose-animation/img/5bb2e531a22c7de0.png",
-                        modifier = Modifier
-                            .clip(CircleShape)
-                            .size(64.dp)
+
+                    FlipButton(cardFace = state,
+                        back = {
+                            ElasticButton(
+                                onClick = {
+                                    state = state.next
+                                }, title = stringResource(id = R.string.back),
+                                modifier = Modifier
+                                    .padding(horizontal = 24.dp)
+                                    .fillMaxWidth()
+                                    .requiredHeight(48.dp),
+                                colorBg = BorderBlue
+                            )
+                        },
+                        front = {
+                            ElasticButton(
+                                onClick = {
+                                    state = state.next
+                                }, title = stringResource(id = R.string.front),
+                                modifier = Modifier
+                                    .padding(horizontal = 24.dp)
+                                    .fillMaxWidth()
+                                    .requiredHeight(48.dp),
+                                colorBg = Blue
+                            )
+                        }
+
                     )
                 }
 
