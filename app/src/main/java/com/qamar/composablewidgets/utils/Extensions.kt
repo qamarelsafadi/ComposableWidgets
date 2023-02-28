@@ -1,5 +1,6 @@
 package com.qamar.composablewidgets.utils
 
+import android.content.Context
 import androidx.compose.runtime.collectAsState
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
@@ -11,4 +12,8 @@ fun NavController.showingBack(currentRoute:NavBackStackEntry?): Boolean {
         else -> true
     }
     return showBackButton
+}
+fun Float.dpToPx(context: Context): Float {
+    return this * context.resources.displayMetrics.density
+
 }
