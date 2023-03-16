@@ -46,8 +46,6 @@ fun SwipeToDelete() {
     val scope =
         rememberCoroutineScope()
 
-    val arry = intArrayOf(1,3,4,5)
-    arry.withIndex()
     Box(
         modifier = Modifier
             .fillMaxWidth()
